@@ -12,7 +12,7 @@ using Xunit;
 
 namespace ValueTest
 {
-    public class GetList
+    public class ValueGetList
     {
         private HttpClient Arrange()
         {

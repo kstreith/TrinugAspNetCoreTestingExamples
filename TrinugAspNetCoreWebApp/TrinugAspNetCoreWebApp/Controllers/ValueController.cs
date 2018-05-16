@@ -7,14 +7,14 @@ namespace TrinugAspNetCoreWebApp.Controllers
     [Route("api/[controller]")]
     public class ValueController : Controller
     {
-        // GET api/values
+        // GET api/value
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET api/values/5
+        // GET api/value/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -24,7 +24,7 @@ namespace TrinugAspNetCoreWebApp.Controllers
             return new OkObjectResult($"value {id}");
         }
 
-        // POST api/values
+        // POST api/value
         [HttpPost]
         public IActionResult Post([FromBody]string value)
         {
@@ -38,13 +38,13 @@ namespace TrinugAspNetCoreWebApp.Controllers
             return new OkResult();
         }
 
-        // PUT api/values/5
+        // PUT api/value/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE api/values/5
+        // DELETE api/value/5
         [Authorize("DeleteValue")]
         [HttpDelete("{id}")]
         public void Delete(int id)

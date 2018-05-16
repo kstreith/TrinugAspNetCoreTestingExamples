@@ -8,7 +8,7 @@ using Xunit;
 
 namespace ValueTest
 {
-    public class Get
+    public class ValueGet
     {
         private ValueController Arrange()
         {

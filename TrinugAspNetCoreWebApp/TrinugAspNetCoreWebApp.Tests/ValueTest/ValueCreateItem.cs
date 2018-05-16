@@ -13,7 +13,7 @@ using Xunit;
 
 namespace ValueTest
 {
-    public class CreateItem
+    public class ValueCreateItem
     {
         private HttpClient Arrange()
         {

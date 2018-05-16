@@ -15,7 +15,7 @@ using Xunit;
 
 namespace ValueTest
 {
-    public class DeleteItem
+    public class ValueDeleteItem
     {
         private HttpClient Arrange(List<string> roles = null)
         {

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Net;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Diagnostics;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
-using TrinugAspNetCoreWebApp.Middleware;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using TrinugAspNetCoreWebApp.Repository;
 
 namespace TrinugAspNetCoreWebApp
 {
@@ -27,6 +23,8 @@ namespace TrinugAspNetCoreWebApp
             services.AddMvc();
             ConfigureAppAuthentication(services);
             services.AddAuthorization(opt => opt.AddPolicy("DeleteValue", policy => policy.RequireRole("Delete")));
+            services.TryAddSingleton<IActivityDataRepository, ActivityDataRepository>();
+            services.TryAddSingleton<ILocationDataRepository, LocationDataRepository>();
         }
 
         protected virtual void ConfigureAppAuthentication(IServiceCollection services)
